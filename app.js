@@ -13,13 +13,14 @@ function getDataFromApi(searchTerm, callback) {
 
 
 function displayYouTubeSearchData(data) {
-  console.log(data.items[0].snippet.thumbnails.default.url);
-   
+ // console.log(data.items[0].snippet.thumbnails.default.url);
+  console.log(data); 
   var resultElement = '';
  
   if (data.items) {
      data.items.map(function(item) {
-     resultElement += '<p><img class="thumbnail" src=' + item.snippet.thumbnails.medium.url +'></p>';
+     resultElement += '<p><a href="https://www.youtube.com/watch?v=' + item.id.videoId + '"><img class="thumbnail" src=' + item.snippet.thumbnails.medium.url +'></a></p>';
+    // resultElement += '<a href="www.google.com">Google</a>'
       });
    }
   
